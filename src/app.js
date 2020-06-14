@@ -37,59 +37,59 @@ app.get('/help', (req ,res)=>{
     })
 })
 
-// app.get('/about',(req , res)=>{
-//     res.render('about',{
-//         about:"About Me",
-//         para:'Here is the simple para for about me'
-//     })
-// })
+app.get('/about',(req , res)=>{
+    res.render('about',{
+        about:"About Me",
+        para:'Here is the simple para for about me'
+    })
+})
 
-// app.get('/',(req, res)=>{
-//     res.render('index',{
-//         weather:'Weather'
-//     })
-// })
+app.get('/',(req, res)=>{
+    res.render('index',{
+        weather:'Weather'
+    })
+})
 
-// app.get('/product',(req , res)=>{
+app.get('/product',(req , res)=>{
 
-//     if(!req.query.search){
-//         return res.send({
-//             error:"you must be enter serche"
-//         })
-//     }
-//     res.send({
-//         product:[]
-//     })
-// })
+    if(!req.query.search){
+        return res.send({
+            error:"you must be enter serche"
+        })
+    }
+    res.send({
+        product:[]
+    })
+})
 
-// app.get('/weather',(req, res)=>{
-//     if(!req.query.address){
-//         return res.send({
-//             error:'No Address ?'
-//         })
+app.get('/weather',(req, res)=>{
+    if(!req.query.address){
+        return res.send({
+            error:'No Address ?'
+        })
 
-//     }
+    }
 
-//     weatherInfo(req.query.address,(error, data)=>{
-//        if(error){
-//            return res.send({error})
-//        }else{
-//            return res.send({data})
-//        }
+    weatherInfo(req.query.address,(error, data)=>{
+       if(error){
+           return res.send({error})
+       }else{
+           return res.send({data})
+       }
 
-//     })
+    })
     
-// })
+})
 
-// app.get('/eco',(req ,res)=>{
-//     res.send({
-//         date:'here is your date'
-//     })
-// })
+app.get('/eco',(req ,res)=>{
+    res.send({
+        date:'here is your date'
+    })
+})
 
-// app.get('*',(req , res)=>{
-//     res.render('404')
-// })
+app.get('*',(req , res)=>{
+    res.render('404')
+})
 
 app.listen(port, ()=>{
     console.log('server is up on port '+port)

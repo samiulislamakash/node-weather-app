@@ -8,6 +8,8 @@ const weatherInfo = require('./utils/weather')
 
 const app = express()
 
+const port = process.env.port || 3000
+
 // asset or view path
 const publicDerectoryPath = path.join(__dirname , '../public')
 const viewPath = path.join(__dirname, '../templates/view')
@@ -89,6 +91,6 @@ app.get('*',(req , res)=>{
     res.render('404')
 })
 
-app.listen(3000, ()=>{
-    console.log('server is up on port 3000')
+app.listen(port, ()=>{
+    console.log('server is up on port '+port)
 })
